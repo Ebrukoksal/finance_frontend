@@ -1,0 +1,22 @@
+{
+  "kart1": [
+    {
+      "title": "bismillahirrahmanirrahim",
+      "description": "amin"
+    }
+  ],
+  "kart2": [
+    {
+      "title": "ya tarih yazıcaz",
+      "description": "ya tarih olucaz."
+    }
+  ],
+  "kart3": [
+    {
+      "title": "biir çok sıkıldım",
+      "description": "ikii yerim çok dar",
+      "bonus": "oohh senden çok var"
+    }
+  ]
+  
+}
