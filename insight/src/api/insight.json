@@ -1,22 +1,19 @@
 {
-  "kart1": [
+  "genel": [
     {
-      "title": "bismillahirrahmanirrahim",
-      "description": "amin"
-    }
-  ],
-  "kart2": [
+      "title": "INSIGHT: Open home loan application",
+      "description1": "Application opened: Apr 5th",
+      "description2": "Current state: Underwriting (Apr 22th)",
+      "description3": "Latest event: Require additional proof of employment (communicated May 5th)",
+      "extra": "It looks like your application is still in underwriting. The underwriters have asked for additional proof of your employment. That's pretty common if you're not on a W-2. Usually getting a letter from your employer confirming your employment status is enough.",
+      "why": "The customer asked about the status of their home loan"
+    },
     {
-      "title": "ya tarih yazıcaz",
-      "description": "ya tarih olucaz."
-    }
-  ],
-  "kart3": [
-    {
-      "title": "biir çok sıkıldım",
-      "description": "ikii yerim çok dar",
-      "bonus": "oohh senden çok var"
+      "title": "INSIGHT: CD coming to term in next 90 days",
+      "description1": "CD balance:",
+      "description2": "CD rate: vv",
+      "description3": "Maturity date: Jun 11th",
+      "why": "This CD is maturing and the customer has not elected to re-invest. They risk loosing out on current high CD rates."
     }
   ]
-  
 }

@@ -1,21 +1,41 @@
-// import data from "../api/insight.json";
+import data from "../api/person.json";
 import "../App.css";
 
 function Person({ image, name, date, other }) {
+  const person = data.personInfo;
   return (
     <div className="navbarImg">
-        <div>
-          <div className="image">
-            <img className="personImage" src={image} alt="" />
+      {person.map((value, index) => {
+        // for (var i = 0; i < person.map.length; i++) {
+        //   const bise = [...value.name];
+        //   console.log(bise);
+        //   break;
+        // }
+        return (
+          <div key={index}>
+            <div className="personBox">
+            <div className="image">
+              <img className="personImage" src={image} alt="" />
+            </div>
+            <div className="image">
+              <h2>{value.name}</h2>
+              <p>{value.date}</p>
+              <p>{value.other}</p>
+            </div>
+            </div>
           </div>
+        );
+      })}
+      {/* <div>
+          
           <div className="info">
             <h1 className="name"> {name}</h1>
             <p className="other"> {date}</p>
             <p className="other"> {other}</p>
           </div>
-        </div>
+        </div> */}
     </div>
-  ); 
+  );
 }
 
 export default Person;

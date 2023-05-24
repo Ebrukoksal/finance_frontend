@@ -1,38 +1,113 @@
-.kutular{
-  border: 5px solid black;
+.App {
+  background-color: grey;
 }
-.kutu {
-  text-align: center;
-  border: 3px solid brown;
-  margin: 100px;
-  padding: 5px;
+.boxes {
+  background-color: rgb(192, 188, 188);
+  margin: 10px;
+  padding-top: 20px;
 }
-.title {
-  color: lightcoral;
+.box {
+  border: 1px solid rgb(169, 167, 167);
+  border-bottom: 3px solid rgb(169, 167, 167);
+  border-left: 3px solid rgb(169, 167, 167);
+  background-color: white;
+  margin: 10px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-items: end; */
+}
+.box2 {
+  border: 1px solid rgb(169, 167, 167);
+  border-bottom: 3px solid rgb(169, 167, 167);
+  border-left: 3px solid rgb(169, 167, 167);
+  background-color: white;
+  margin: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.whyBox {
+  width: 150px;
+  height: auto;
+  border: 1px solid rgb(169, 167, 167);
+  border-bottom: 3px solid rgb(169, 167, 167);
+  border-left: 3px solid rgb(169, 167, 167);
+  background-color: white;
+  margin: 10px;
+  padding-top: 10px;
+  padding-left: 15px;
+  float: right;
+  flex-wrap: wrap;
+}
+.why1 {
+  color: rgb(193, 14, 109);
+  font-size: 17px;
   text-align: start;
   flex-wrap: wrap;
-  padding-left: 10px;
 }
-.description {
-  text-align: left;
-  flex-wrap: wrap;
+.UMbuttons {
+  text-align: right;
+  padding-right: 20px;
+  padding-bottom: 10px;
+}
+.IQbuttons {
   padding-left: 10px;
+  margin-bottom: -10px;
+}
+.Ibutton {
+  background-color: rgb(192, 188, 188);
+  border: none;
+  height: 30px;
+  margin-right: 10px;
+  width: 120px;
+}
+.Qbutton {
+  background-color: rgb(192, 188, 188);
+  border: none;
+  height: 30px;
+  width: 120px;
+}
+.useButton {
+  width: 65px;
+  height: 25px;
+  border: 1px solid blue;
+  background-color: blue;
+  color: white;
+}
+.moreButton {
+  width: 65px;
+  height: 25px;
+  border: 1px solid orange;
+  background-color: orange;
+  color: black;
+  /* margin-left: 500px;
+  margin-bottom: 10px; */
+}
+.personBox {
+  border: 1px solid rgb(169, 167, 167);
+  background-color: white;
+  border-bottom: 3px solid rgb(169, 167, 167);
+  border-left: 3px solid rgb(169, 167, 167);
+  margin: 20px 0px 0px 10px;
+  display: flex;
+  flex-direction: row;
+  width: 1000px;
 }
 .parent {
-  display:flex;
-  flex-wrap: wrap;
+  position: fixed;
   flex-direction: row;
   margin-left: 0.7%;
   margin-right: 0.7%;
-  background-color: aquamarine;
-  position: fixed;
-  width: 100%;
 }
-.info{
+.info {
   float: left;
   padding-left: 20px;
 }
-.image{
+.image {
   float: left;
   height: 150px;
   padding-left: 20px;
@@ -44,4 +119,16 @@
   width: 100px;
   height: 100px;
 }
-
+.title {
+  color: rgb(193, 14, 109);
+  font-size: 20px;
+  text-align: start;
+  flex-wrap: wrap;
+  padding-left: 10px;
+}
+.description {
+  text-align: left;
+  flex-wrap: wrap;
+  padding-left: 10px;
+  text-align: start;
+}
