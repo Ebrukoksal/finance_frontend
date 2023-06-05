@@ -1,3 +1,8 @@
 {
-    
+    "sampleQuestions": [
+        "Could you please provide proof of your current employment?",
+        "Do you have a valid auto insurance policy?",
+        "Can make, model, and year?",
+        "Any changes to contact information?"
+    ]
 }
