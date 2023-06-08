@@ -3,24 +3,12 @@ import data from "../api/q&a.json";
 import response from "../api/chatBox.json";
 import { useState } from "react";
 import { bottomNavigationClasses } from "@mui/material";
-import daisy from "../components/images/background_papatya.jpg";
 
 function QA() {
   const responses = response.chat;
   const [prompt, setPrompt] = useState("");
   const [messages, setMessages] = useState([]);
-
-  const ChatbotResponse = () => {
-    <div>
-      {responses.map((value, index) => {
-        return (
-          <div key={index} className="response">
-            <p>{value}</p>
-          </div>
-        );
-      })}
-    </div>;
-  };
+  const [numOfQuestions, setNumOfQuestions] = useState(0);
 
   const sendMessage = (keyCode) => {
     if (keyCode == 13) {
@@ -35,30 +23,24 @@ function QA() {
       }
     }
   };
+  const handleResponses = () => {
+    let new_messages = [];
+    new_messages.push(responses[numOfQuestions % responses.length]);
+    setMessages((messages) => [...messages, new_messages]);
+  };
+  const handleQuestions = (index) => {
+    let new_messages = [];
+    new_messages.push(questions[index]);
 
-  const handleQuestions = () => {
-    {
-      setMessages([
-        ...messages,
-        questions.map((value, index) => {
-          return (
-            <div key={index} className="userMessage">
-              {value}
-            </div>
-          );
-        }),
-      ]);
-      setMessages((messages) => [
-        ...messages,
-        responses[messages.length % responses.length],
-      ]);
-      setPrompt("");
-    }
+    setMessages((messages) => [...messages, new_messages]);
+    setNumOfQuestions(numOfQuestions + 1);
+    handleResponses();
+    setPrompt("");
   };
 
-  const sampleQuestion = () => {
-    setMessages((messages) => [...messages, prompt]);
-    setPrompt(handleQuestions());
+  const sampleQuestion = (index) => {
+    // setMessages((messages) => [...messages, prompt]);
+    handleQuestions(index);
   };
 
   const questions = data.sampleQuestions;
@@ -66,8 +48,10 @@ function QA() {
     <div>
       <div className="bakim">
         <div>
-          {messages.map((message) => (
-            <p className="userMessage">{message}</p>
+          {messages.map((message, index) => (
+            <p key={index} className="userMessage">
+              {message}
+            </p>
           ))}
         </div>
         <div>
@@ -77,7 +61,7 @@ function QA() {
                 <button
                   className="sampleQuestions"
                   onClick={() => {
-                    sampleQuestion();
+                    sampleQuestion(index);
                   }}
                 >
                   {value}

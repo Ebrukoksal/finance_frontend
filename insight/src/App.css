@@ -129,8 +129,8 @@
   text-align: start;
   flex-wrap: wrap;
   padding-left: 10px;
-  display: inline;
-  float: left;
+  /* display: inline;
+  float: left; */
 }
 .description {
   text-align: left;
