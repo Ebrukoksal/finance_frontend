@@ -22,6 +22,11 @@ const More = (props) => {
   );
 };
 
+const openLinkInNewTab = ( url ) => {
+  const newTab = window.open(url, '_blank', 'noopener,noreferrer');
+  if ( newTab ) newTab.opener = null;
+} 
+
 function Insight() {
   const box = data.genel;
   const doc = Link.links;
@@ -37,19 +42,16 @@ function Insight() {
                 {/* <WhyBox why={value.why} /> */}
                 <div>
                   <div className="description">
-                    {value.descriptions.map((value1, index1) => <p>{value1}</p>)}
+                    {value.descriptions.map((value1, index1) => <p key={index1}>{value1}</p>)}
                   </div>
                   {/* {value.extra ? <More extra={value.extra} /> : <div></div>} */}
-
-                  <Table/>
-                  <button className="cancelCard">Cancel Card</button>
-                  <button className="openAcc">Open a Checking Acc.</button>
+                  <div className="table"><Table/></div>
+                  <button className="cancelCard" onClick={ () => openLinkInNewTab('http://endless.horse/')}>Cancel Card</button>
+                  <button className="openAcc" onClick={ () => openLinkInNewTab('https://theuselessweb.com/')}>Open a Checking Acc.</button>
                   <br/>
-                  {/* Corresponding Documents:  <a href="#" style={{color:"blue", margin:"10px"}}>Doc1</a>||<a href="#" style={{color:"blue", margin:"10px"}}>Doc2</a>||<a href="#" style={{color:"blue", margin:"10px"}}>Doc3</a> */}
                   {doc.map((value2, index2)=>{ 
-                    console.log(value2)
                     return (
-                     <a href={value2} >Doc{index2+1} </a>
+                     <a key={index2} href='#' onClick={ () => openLinkInNewTab(value2)} >Doc{index2+1} </a>
                     )
                   })}
                 </div>
