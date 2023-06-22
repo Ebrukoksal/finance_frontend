@@ -2,55 +2,66 @@ import TextField from "@mui/material/TextField";
 import data from "../api/q&a.json";
 import response from "../api/chatBox.json";
 import { useState } from "react";
-import { bottomNavigationClasses } from "@mui/material";
 
 function QA() {
   const responses = response.chat;
   const [prompt, setPrompt] = useState("");
   const [messages, setMessages] = useState([]);
   const [numOfQuestions, setNumOfQuestions] = useState(0);
+  const messageLengthThresHold = 10;
+  const longMessageWidth = "200px";
+  const shortMessageWidth = "80px";
 
   const sendMessage = (keyCode) => {
     if (keyCode == 13) {
-      if (prompt.length > 0) {
-        // 1.update the messages state variable
-        setMessages((messages) => [...messages, prompt]);
-        setMessages((messages) => [
-          ...messages,
-          responses[messages.length % responses.length],
-        ]);
-        setPrompt("");
-      }
+      handle(prompt, "right");
     }
   };
+
   const handleResponses = () => {
-    let new_messages = [];
-    new_messages.push(responses[numOfQuestions % responses.length]);
-    setMessages((messages) => [...messages, new_messages]);
+    setMessages((messages) => [
+      ...messages,
+      {
+        content: responses[numOfQuestions % responses.length],
+        direction: "left",
+      },
+    ]);
   };
   const handleQuestions = (index) => {
-    let new_messages = [];
-    new_messages.push(questions[index]);
-
-    setMessages((messages) => [...messages, new_messages]);
-    setNumOfQuestions(numOfQuestions + 1);
-    handleResponses();
-    setPrompt("");
+    handle(questions[index], "right");
   };
-
+  const handle = (prompt, direction) => {
+    if (prompt.length > 0) {
+      setMessages((messages) => [
+        ...messages,
+        { content: prompt, direction: direction },
+      ]);
+      setNumOfQuestions(numOfQuestions + 1);
+      handleResponses();
+      setPrompt("");
+    }
+  };
   const sampleQuestion = (index) => {
     // setMessages((messages) => [...messages, prompt]);
     handleQuestions(index);
   };
+  // const Messages
 
   const questions = data.sampleQuestions;
   return (
     <div>
       <div className="bakim">
         <div>
+          {/* {Messages()} */}
           {messages.map((message, index) => (
             <p key={index} className="userMessage">
-              {message}
+              {message.direction == "right" ? (
+                <div className="right" style={{}}>
+                  {message.content}
+                </div>
+              ) : (
+                <div className="left">{message.content}</div>
+              )}
             </p>
           ))}
         </div>
@@ -82,6 +93,8 @@ function QA() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             onKeyDown={(e) => sendMessage(e.keyCode)}
+            style={{"position": "fixed", "width":"" }}
+            //burda textareayı aşşaya sabitlemeye çalıştım başaramadm..
           />
           <button onClick={() => sendMessage(13)}>send</button>
         </div>

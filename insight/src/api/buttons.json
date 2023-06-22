@@ -1,0 +1,11 @@
+{
+    "buttons":[
+        "Cancel Card",
+        "Open a Checking Acc."
+    ],
+    "buttonLinks":[
+        "http://endless.horse/",
+        "https://theuselessweb.com/"
+    ]
+    
+}
