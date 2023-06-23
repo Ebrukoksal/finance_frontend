@@ -31,8 +31,7 @@ const openLinkInNewTab = (url) => {
 function Insight() {
   const box = data.genel;
   const doc = Link.links;
-  const but = Button.buttons;
-  const lin = Button.buttonLinks;
+  const buts = Button.buttons;
 
   return (
     <div>
@@ -52,28 +51,24 @@ function Insight() {
                   {/* {value.extra ? <More extra={value.extra} /> : <div></div>} */}
                   <div className="table">
                     <Table />
-                  </div>
-                  {/* <button className="cancelCard" onClick={ () => openLinkInNewTab('')}>Cancel Card</button>
-                  <button className="openAcc" onClick={ () => openLinkInNewTab('')}>Open a Checking Acc.</button> */}
-                  {but.map((value3, index3) => (
-                    //***burda iyice saçmalıyorum ama kısmen çalışıyo***
-                    <button
-                      className="cancelCard"
-                      onClick={() =>
-                        openLinkInNewTab(
-                          lin.map((value4, index4) => {
-                            return(
-                              value4[index4]
-                            )
-                          })
-                        )
-                      }
-                      key={index3}
-                    >
-                      {" "}
-                      {value3}{" "}
-                    </button>
-                  ))}
+                  </div> 
+            {/* BURDA BİŞELER OLMADI AMA OLDU DA GİBİ YA */}
+                      {buts.map((but,index3)=>{
+                        return(
+                        <button
+                        className="cancelCard"
+                        onClick={() =>
+                          openLinkInNewTab(
+                            but.link
+                          )
+                        }
+                        key={index3}
+                      >
+                        {but.title}
+                      </button>
+                      )})}
+                    
+                  
                   <br />
                   {doc.map((value2, index2) => {
                     return (

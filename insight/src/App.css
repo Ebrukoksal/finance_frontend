@@ -13,7 +13,7 @@
   background-color: white;
   margin: 10px;
   padding-left: 15px;
-  flex-direction: column;  
+  flex-direction: column;
 }
 .whyBox {
   width: 150px;
@@ -40,7 +40,6 @@
   flex-direction: column;
   flex-wrap: wrap;
 }
-
 .why1 {
   color: rgb(193, 14, 109);
   font-size: 17px;
@@ -86,7 +85,6 @@
   /* margin-left: 500px;
   margin-bottom: 10px; */
 }
-
 .navbar {
   position: fixed;
   width: 100%;
@@ -94,10 +92,12 @@
   z-index: 1;
 }
 .personBox {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   border: 1px solid rgb(169, 167, 167);
   background-color: white;
-  /* border-bottom: 3px solid rgb(169, 167, 167);
-  border-left: 3px solid rgb(169, 167, 167); */
+  margin-left:10px;
+  margin-right:10px;
   display: flex;
   flex-direction: row;
 }
@@ -125,7 +125,7 @@
 }
 .title {
   color: rgb(193, 14, 109);
-  font-size: 20px;
+  font-size: 23px;
   text-align: start;
   flex-wrap: wrap;
   padding-left: 10px;
@@ -146,19 +146,20 @@
   margin-bottom: -4px;
 }
 .tablist {
-  border-top-right-radius: 50px;
-  border-top-left-radius: 50px;
   background-color: rgb(192, 188, 188);
 }
-.bakim{
-  border: 3px solid purple;
+.chat {
   background-color: white;
   width: 80%;
   height: 360px;
   margin-left: 10%;
   overflow-y: scroll;
 }
-.sampleQuestions{
+.background{
+  background-color: rgb(192, 188, 188);
+  padding-top: 20px;
+}
+.sampleQuestions {
   border: 1px solid wheat;
   width: fit-content;
   padding: 0px 10px 0px 10px;
@@ -167,22 +168,22 @@
   opacity: 80%;
   color: darkmagenta;
 }
-.textField{
+.textField {
   width: 90%;
 }
-.cancelCard{
+.cancelCard {
   padding: 3px;
   margin-top: 10px;
   background-color: white;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
 }
-.cancelCard:hover{
+.cancelCard:hover {
   background-color: lightgrey;
   cursor: pointer;
   transition: 200ms;
 }
-.openAcc{
+.openAcc {
   padding: 3px;
   margin-top: 10px;
   background-color: white;
@@ -190,22 +191,21 @@
   border-bottom: 3px solid black;
   margin-left: 250px;
 }
-.openAcc:hover{
+.openAcc:hover {
   background-color: lightgrey;
   cursor: pointer;
   transition: 200ms;
 }
-.right{
-  /* max-width:500px; */
+.right {
+  width: max-content;
   padding: 5px 10px 5px 10px;
   border: 5px solid deeppink;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-left: 90%;
-  
 }
-.left{
+.left {
   width: max-content;
   padding: 5px 10px 5px 10px;
   border: 5px solid deeppink;

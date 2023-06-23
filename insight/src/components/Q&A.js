@@ -45,24 +45,29 @@ function QA() {
     // setMessages((messages) => [...messages, prompt]);
     handleQuestions(index);
   };
-  // const Messages
+
+  const Message = (props) => {
+    console.log(props.content,props.content.length);
+    return (
+      <div className={props.direction}>
+        {props.content.length >= messageLengthThresHold ? (
+          
+          <div style={{ width: longMessageWidth }}>{props.content}</div>
+        ) : (
+          <div style={{ width: shortMessageWidth }}>{props.content}</div>
+        )}
+      </div>
+    );
+  };
+  //right kısmında başka width fln var mı diye bakılacak + css güzelleştirilecek
 
   const questions = data.sampleQuestions;
   return (
-    <div>
-      <div className="bakim">
+    <div className="background">
+      <div className="chat">
         <div>
-          {/* {Messages()} */}
           {messages.map((message, index) => (
-            <p key={index} className="userMessage">
-              {message.direction == "right" ? (
-                <div className="right" style={{}}>
-                  {message.content}
-                </div>
-              ) : (
-                <div className="left">{message.content}</div>
-              )}
-            </p>
+            <div key={index}>{Message(message)}</div>
           ))}
         </div>
         <div>
@@ -93,7 +98,7 @@ function QA() {
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
             onKeyDown={(e) => sendMessage(e.keyCode)}
-            style={{"position": "fixed", "width":"" }}
+            style={{ position: "fixed", width: "" }}
             //burda textareayı aşşaya sabitlemeye çalıştım başaramadm..
           />
           <button onClick={() => sendMessage(13)}>send</button>

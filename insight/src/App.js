@@ -19,7 +19,7 @@ function App() {
           <Person image={Photo} />
         </nav>
       </div>
-      <div style={{ height: "250px" }}></div>
+      <div style={{ height: "200px" }}></div>
       <div className="tabs">
         <Tabs
           defaultValue={0}
@@ -29,6 +29,7 @@ function App() {
           <TabList
             className="tablist"
             style={{
+              backgroundColor:"rgb(192, 188, 188)",
               color: "rgb(192, 188, 188)",
               width: "350px",
               borderTopRightRadius: "20px",
@@ -36,10 +37,20 @@ function App() {
               borderBottomLeftRadius: "0px",
               borderBottomRightRadius: "0px",
               marginBottom: "-4px",
+              width:"300px"
             }}
           >
-            <Tab>INSIGHT</Tab>
-            <Tab>Q&A</Tab>
+            <Tab style={{
+              marginBottom:"-4px",
+              borderRadius:"5px" ,
+              width:"50px"
+              }} >INSIGHT</Tab>
+            <Tab style={{
+              marginBottom:"-4px",
+              borderRadius:"5px",
+              width:"50px",
+              borderTopRightRadius:"20px"
+            }}>Q&A</Tab>
           </TabList>
           <TabPanel value={0}>
             <div>
@@ -47,7 +58,10 @@ function App() {
             </div>
           </TabPanel>
           <TabPanel value={1}>
+            <div>
             <QA />
+            </div>
+            
           </TabPanel>
         </Tabs>
       </div>

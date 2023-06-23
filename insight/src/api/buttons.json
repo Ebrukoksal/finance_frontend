@@ -1,11 +1,13 @@
 {
-    "buttons":[
-        "Cancel Card",
-        "Open a Checking Acc."
-    ],
-    "buttonLinks":[
-        "http://endless.horse/",
-        "https://theuselessweb.com/"
-    ]
-    
+  "buttons": [
+    {
+      "title": "Cancel Card",
+      "link":"http://endless.horse/"
+    },
+    {
+      "title": "Open a Checking Acc.",
+      "link":"https://theuselessweb.com/"
+    }
+  ]
+  
 }
