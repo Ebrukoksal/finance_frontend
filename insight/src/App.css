@@ -1,15 +1,15 @@
 .App {
-  background-color: grey;
+  background-color: #854DFF;
 }
 .boxes {
-  background-color: rgb(192, 188, 188);
+  background-color: #AD8BF7;
   padding-top: 20px;
 }
 .box {
   position: relative;
-  border: 1px solid rgb(169, 167, 167);
-  border-bottom: 3px solid rgb(169, 167, 167);
-  border-left: 3px solid rgb(169, 167, 167);
+  border: 1px solid #AD8BF7;
+  border-bottom: 3px solid #AD8BF7;
+  border-left: 3px solid #AD8BF7;
   background-color: white;
   margin: 10px;
   padding-left: 15px;
@@ -18,9 +18,9 @@
 .whyBox {
   width: 150px;
   height: auto;
-  border: 1px solid rgb(169, 167, 167);
-  border-bottom: 3px solid rgb(169, 167, 167);
-  border-left: 3px solid rgb(169, 167, 167);
+  border: 1px solid #AD8BF7;
+  border-bottom: 3px solid #AD8BF7;
+  border-left: 3px solid #AD8BF7;
   background-color: white;
   margin: 10px;
   padding-top: 10px;
@@ -29,9 +29,9 @@
   float: right;
 }
 .box2 {
-  border: 1px solid rgb(169, 167, 167);
-  border-bottom: 3px solid rgb(169, 167, 167);
-  border-left: 3px solid rgb(169, 167, 167);
+  border: 1px solid #AD8BF7;
+  border-bottom: 3px solid #AD8BF7;
+  border-left: 3px solid #AD8BF7;
   background-color: white;
   margin: 10px;
   padding-top: 10px;
@@ -57,14 +57,14 @@
   margin-bottom: -10px;
 }
 .Ibutton {
-  background-color: rgb(192, 188, 188);
+  background-color: #AD8BF7;
   border: none;
   height: 30px;
   margin-right: 10px;
   width: 120px;
 }
 .Qbutton {
-  background-color: rgb(192, 188, 188);
+  background-color: #AD8BF7;
   border: none;
   height: 30px;
   width: 120px;
@@ -82,19 +82,16 @@
   border: 1px solid orange;
   background-color: orange;
   color: black;
-  /* margin-left: 500px;
-  margin-bottom: 10px; */
 }
 .navbar {
   position: fixed;
   width: 100%;
-  /* background-color: blue; */
-  z-index: 1;
+  z-index: 0;
 }
 .personBox {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  border: 1px solid rgb(169, 167, 167);
+  border: 1px solid #AD8BF7;
   background-color: white;
   margin-left:10px;
   margin-right:10px;
@@ -102,10 +99,7 @@
   flex-direction: row;
 }
 .parent {
-  /* position: fixed; */
   flex-direction: row;
-  /* margin-left: 0.7%;
-  margin-right: 0.7%; */
 }
 .info {
   float: left;
@@ -129,8 +123,6 @@
   text-align: start;
   flex-wrap: wrap;
   padding-left: 10px;
-  /* display: inline;
-  float: left; */
 }
 .description {
   text-align: left;
@@ -145,20 +137,17 @@
   margin-left: 120px;
   margin-bottom: -4px;
 }
-.tablist {
-  background-color: rgb(192, 188, 188);
-}
 .chat {
+  border-radius: 10px;
   max-width: 80%;
   height: 360px;
   margin-left: 10%;
   overflow-y: scroll;
-  /* scrollbar-color: rgb(101,112,134); NEDEN İŞE YARAMADI ANLAMADM */
   overflow-x: hidden;
   z-index: -1;
 }
 .background{
-  background-color: rgb(192, 188, 188);
+  background-color: #AD8BF7;
   padding-top: 20px;
 }
 .sampleQuestions {
@@ -179,18 +168,32 @@
   cursor: pointer;
 }
 .textField {
-  /* width: 450px; */
-  /* float: inline; */
+  width: 90%;
+  float: left;
+}
+.sendButton{
+  width: 10%;
+  height: 50px;
+  float: right;
+  background-color: transparent;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+}
+.sendButton:hover{
+  cursor: pointer;
+  background-color: rgba(214, 214, 191, 0.338);
 }
 .cancelCard {
   padding: 3px;
   margin-top: 10px;
+  border-color: rgb(133, 77, 255);
   background-color: white;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
 }
 .cancelCard:hover {
-  background-color: lightgrey;
+  background-color: rgb(133, 77, 255);
   cursor: pointer;
   transition: 200ms;
 }

@@ -4,9 +4,8 @@ import response from "../api/chatBox.json";
 import { useState } from "react";
 import blur from "../components/images/background_blury.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faThin} from "@fortawesome/free-solid-svg-icons";
-import {faPaperPlane} from "@fortawesome/free-solid-svg-icons";
-
+import { faThin } from "@fortawesome/free-solid-svg-icons";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 function QA() {
   const responses = response.chat;
@@ -54,30 +53,29 @@ function QA() {
   const sampleQuestion = (index) => {
     handleQuestions(index);
   };
-  const showQuestions = ()=>{
-    return(
+  const showQuestions = () => {
+    return (
       <div>
         {questions.map((value, index) => {
-            return (
-              <div key={index}>
-                <button
-                  className="sampleQuestions"
-                  onClick={() => {
-                    sampleQuestion(index);
-                    changeState();
-                  }}
-                >
-                  {value}
-                </button>
-                <div style={{height:"40px"}}></div>
+          return (
+            <div key={index}>
+              <button
+                className="sampleQuestions"
+                onClick={() => {
+                  sampleQuestion(index);
+                  changeState();
+                }}
+              >
+                {value}
+              </button>
+              <div style={{ height: "40px" }}></div>
               {/* Butonlar sağ tarafa yaslansın ama yan yana gelmesinler diye böyle geçici bi çözüm buldum */}
-
-              </div>
-            );
-          })}
+            </div>
+          );
+        })}
       </div>
-    )
-  }
+    );
+  };
   //Burda butona basıldıktan sonra hide ettirdim ama herhangi bir mesajdan sonrasını yapamadm.
   const Message = (props) => {
     return (
@@ -94,27 +92,19 @@ function QA() {
         <div style={{ height: "30px" }}></div>
       </div>
     );
-    
   };
- 
 
   const questions = data.sampleQuestions;
   return (
     <div className="background">
-      <div className="chat" style={{backgroundImage: `url(${blur})`}}>
-
+      <div className="chat" style={{ backgroundImage: `url(${blur})` }}>
         <div>
           {messages.map((message, index) => (
             <div key={index}>{Message(message)}</div>
           ))}
         </div>
-        
-        <div>
-          {show ? 
-          showQuestions()
-          :
-          <></> }          
-        </div>
+
+        <div>{show ? showQuestions() : <></>}</div>
         <div className="textField">
           <TextField
             className="textField"
@@ -129,7 +119,11 @@ function QA() {
             onKeyDown={(e) => sendMessage(e.keyCode)}
             //burda textareayı aşşaya sabitlemeye çalıştım başaramadm..
           />
-          <button onClick={() => sendMessage(13)} >{<FontAwesomeIcon icon={faPaperPlane} />}</button>
+        </div>
+        <div>
+          <button className="sendButton" onClick={() => sendMessage(13)}>
+            {<FontAwesomeIcon icon={faPaperPlane} />}
+          </button>
         </div>
       </div>
     </div>
