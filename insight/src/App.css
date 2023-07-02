@@ -1,8 +1,8 @@
 .App {
-  background-color: #854DFF;
+  background-color: rgb(190, 124, 247);
 }
 .boxes {
-  background-color: #AD8BF7;
+  background-color: rgb(206, 151, 255);
   padding-top: 20px;
 }
 .box {
@@ -11,9 +11,10 @@
   border-bottom: 3px solid #AD8BF7;
   border-left: 3px solid #AD8BF7;
   background-color: white;
-  margin: 10px;
+  /* float: left; */
   padding-left: 15px;
   flex-direction: column;
+  width: 500px;
 }
 .whyBox {
   width: 150px;
@@ -86,7 +87,7 @@
 .navbar {
   position: fixed;
   width: 100%;
-  z-index: 0;
+  z-index: 1;
 }
 .personBox {
   border-bottom-left-radius: 20px;
@@ -182,15 +183,22 @@
 }
 .sendButton:hover{
   cursor: pointer;
-  background-color: rgba(214, 214, 191, 0.338);
+  background-color: rgba(214, 214, 191, 0.53);
 }
 .cancelCard {
-  padding: 3px;
+  width: 200px;
+  height: 40px;
+  padding-top: 10px;
   margin-top: 10px;
-  border-color: rgb(133, 77, 255);
-  background-color: white;
+  margin-left: 10%;
+  border-color: rgb(97, 29, 243);
+  border-radius: 10px;
+  background-color: rgb(97, 29, 243);
+  color: white;
   border-right: 3px solid black;
   border-bottom: 3px solid black;
+  display: flex;
+  justify-content: center;
 }
 .cancelCard:hover {
   background-color: rgb(133, 77, 255);
@@ -234,3 +242,23 @@
   margin-left: 10px;
 }
 
+@media (min-width:700px){
+  .navbar{
+    width: 50%;
+  }
+  .box{
+    border-radius: 0px;
+  }
+  .tabs{
+    margin-top: -40px;
+  }
+}
+@media (min-width: 300px){
+ 
+  .box{
+    border-radius: 20px;
+  }
+  .tabs{
+    margin-top: 0px;
+  }
+}

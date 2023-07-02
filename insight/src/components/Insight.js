@@ -36,6 +36,7 @@ function Insight() {
   return (
     <div>
       <div className="boxes">
+      <button>ok</button>
         {box.map((value, index) => {
           return (
             <div key={index}>
@@ -49,26 +50,25 @@ function Insight() {
                     ))}
                   </div>
                   {/* {value.extra ? <More extra={value.extra} /> : <div></div>} */}
-                  <div className="table">
-                    <Table />
-                  </div> 
-            {/* BURDA BİŞELER OLMADI AMA OLDU DA GİBİ YA */}
-                      {buts.map((but,index3)=>{
-                        return(
-                        <button
+
+                  {/* BURDA BİŞELER OLMADI AMA OLDU DA GİBİ YA */}
+                  {buts.map((but, index3) => {
+                    return (
+                      <button
                         className="cancelCard"
-                        onClick={() =>
-                          openLinkInNewTab(
-                            but.link
-                          )
-                        }
+                        onClick={() => openLinkInNewTab(but.link)}
                         key={index3}
                       >
                         {but.title}
                       </button>
-                      )})}
-                    
-                  
+                    );
+                  })}
+
+                  <div className="table">
+                    <br />
+                    <Table />
+                  </div>
+
                   <br />
                   {doc.map((value2, index2) => {
                     return (

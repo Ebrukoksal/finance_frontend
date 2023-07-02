@@ -6,11 +6,6 @@ function Person({ image, name, date, other }) {
   return (
     <div className="navbarImg">
       {person.map((value, index) => {
-        // for (var i = 0; i < person.map.length; i++) {
-        //   const bise = [...value.name];
-        //   console.log(bise);
-        //   break;
-        // }
         return (
           <div key={index}>
             <div className="personBox">

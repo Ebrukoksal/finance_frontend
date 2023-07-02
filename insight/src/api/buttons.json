@@ -1,11 +1,11 @@
 {
   "buttons": [
     {
-      "title": "Cancel Card",
+      "title": "Open a Saving Account",
       "link":"http://endless.horse/"
     },
     {
-      "title": "Open a Checking Acc.",
+      "title": "Open a Checking Account",
       "link":"https://theuselessweb.com/"
     }
   ]
