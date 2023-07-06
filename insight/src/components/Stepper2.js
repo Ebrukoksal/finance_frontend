@@ -10,16 +10,15 @@ import Avatar from "@mui/material/Avatar";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { blue, green, red, pink } from "@mui/material/colors";
-// import FavoriteIcon from '@mui/icons-material/Favorite';
-// import ShareIcon from '@mui/icons-material/Share';
-// import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Table from "./Table";
 import Menu from "./Menu";
 import data from "../api/insight.json";
 import { colors } from "@mui/material";
 import button from "../api/buttons.json";
-
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,7 +34,6 @@ const openLinkInNewTab = (url) => {
   const newTab = window.open(url, "_blank", "noopener,noreferrer");
   if (newTab) newTab.opener = null;
 };
-
 
 const buts = button.buttons;
 
@@ -53,7 +51,7 @@ export default function RecipeReviewCard() {
       <CardHeader
         action={
           // <IconButton aria-label="settings">
-          //   ☀{/* <MoreVertIcon /> */}
+          //   {/* <MoreVertIcon /> */}
           // </IconButton>
           // <ExpandMore
           //   expand={expanded}
@@ -63,12 +61,12 @@ export default function RecipeReviewCard() {
           // >
           //   ...
           // </ExpandMore>
-          <Menu/>
+          <Menu />
         }
         title="INSIGHT: Open home loan application"
         subheader="September 14, 2023"
       />
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
+      {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           {buts.map((but, index3) => {
             return (
@@ -82,7 +80,7 @@ export default function RecipeReviewCard() {
             );
           })}{" "}
         </CardContent>
-      </Collapse>
+      </Collapse> */}
       {/* <CardMedia
         component="img"
         height="194"
@@ -103,17 +101,18 @@ export default function RecipeReviewCard() {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          {/* <FavoriteIcon /> */}♡
+          <FavoriteIcon color="secondary" />
         </IconButton>
-        <IconButton aria-label="share">{/* <ShareIcon /> */}✉</IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon color="secondary"/>
+        </IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
-          {/* <ExpandMoreIcon /> */}
-          ...
+          <ExpandMoreIcon color="secondary"/>
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
