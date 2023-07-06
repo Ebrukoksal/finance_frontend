@@ -12,8 +12,8 @@ import csvFile from "../data/sample.csv";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
-    backgroundColor: theme.palette.common.black,
-    color: theme.palette.common.white,
+    backgroundColor: theme.palette.common.white,
+    color: theme.palette.common.black,
   },
   [`&.${tableCellClasses.body}`]: {
     fontSize: 14,
@@ -29,12 +29,6 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
     border: 0,
   },
 }));
-
-function createData(name) {
-  return { name };
-}
-
-const rows = [createData("Frozen yoghurt")];
 
 export default function CustomizedTables() {
   const [data, setData] = React.useState([]);
@@ -57,8 +51,8 @@ export default function CustomizedTables() {
   console.log(data);
 
   return (
-    <TableContainer sx={{ maxWidth: 220 }} component={Paper}>
-      <Table sx={{ maxWidth: 100 }} aria-label="customized table">
+    <TableContainer sx={{  }} component={Paper}>
+      <Table sx={{  }} aria-label="customized table">
         <TableHead>
           <TableRow>
             {data.length > 0 ? (
@@ -76,8 +70,8 @@ export default function CustomizedTables() {
               <StyledTableCell component="th" scope="row">
                 {row[0]}
               </StyledTableCell>
-              <StyledTableCell align="right">{row[1]}</StyledTableCell>
-              <StyledTableCell align="right">{row[2]}</StyledTableCell>
+              <StyledTableCell align="left">{row[1]}</StyledTableCell>
+              <StyledTableCell align="left">{row[2]}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>

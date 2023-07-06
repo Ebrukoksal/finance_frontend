@@ -4,6 +4,7 @@ import Link from "../api/links.json";
 import Button from "../api/buttons.json";
 import WhyBox from "./whyBox";
 import Table from "./Table";
+import Stepper2 from "../components/Stepper2";
 
 const More = (props) => {
   return (
@@ -36,59 +37,60 @@ function Insight() {
   return (
     <div>
       <div className="boxes">
-      <button>ok</button>
-        {box.map((value, index) => {
-          return (
-            <div key={index}>
-              <div className="box">
-                <p className="title">{value.title} </p>
-                {/* <WhyBox why={value.why} /> */}
-                <div>
-                  <div className="description">
-                    {value.descriptions.map((value1, index1) => (
-                      <p key={index1}>{value1}</p>
-                    ))}
-                  </div>
-                  {/* {value.extra ? <More extra={value.extra} /> : <div></div>} */}
-
-                  {/* BURDA BİŞELER OLMADI AMA OLDU DA GİBİ YA */}
-                  {buts.map((but, index3) => {
-                    return (
-                      <button
-                        className="cancelCard"
-                        onClick={() => openLinkInNewTab(but.link)}
-                        key={index3}
-                      >
-                        {but.title}
-                      </button>
-                    );
-                  })}
-
-                  <div className="table">
-                    <br />
-                    <Table />
-                  </div>
-
-                  <br />
-                  {doc.map((value2, index2) => {
-                    return (
-                      <a
-                        key={index2}
-                        href="#"
-                        onClick={() => openLinkInNewTab(value2)}
-                      >
-                        Doc{index2 + 1}{" "}
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      <Stepper2/>
       </div>
     </div>
   );
 }
 
 export default Insight;
+
+// {box.map((value, index) => {
+//   return (
+//     <div key={index}>
+//       <div className="box">
+//         <p className="title">{value.title} </p>
+//         {/* <WhyBox why={value.why} /> */}
+//         <div>
+//           <div className="description">
+//             {value.descriptions.map((value1, index1) => (
+//               <p key={index1}>{value1}</p>
+//             ))}
+//           </div>
+//           {/* {value.extra ? <More extra={value.extra} /> : <div></div>} */}
+
+//           {/* BURDA BİŞELER OLMADI AMA OLDU DA GİBİ YA */}
+//           {buts.map((but, index3) => {
+//             return (
+//               <button
+//                 className="cancelCard"
+//                 onClick={() => openLinkInNewTab(but.link)}
+//                 key={index3}
+//               >
+//                 {but.title}
+//               </button>
+//             );
+//           })}
+
+//           <div className="table">
+//             <br />
+//             <Table />
+//           </div>
+
+//           <br />
+//           {doc.map((value2, index2) => {
+//             return (
+//               <a
+//                 key={index2}
+//                 href="#"
+//                 onClick={() => openLinkInNewTab(value2)}
+//               >
+//                 Doc{index2 + 1}{" "}
+//               </a>
+//             );
+//           })}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// })}

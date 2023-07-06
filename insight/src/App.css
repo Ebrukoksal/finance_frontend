@@ -1,8 +1,8 @@
 .App {
-  background-color: rgb(190, 124, 247);
+  background-color: rgb(185, 145, 133);
 }
 .boxes {
-  background-color: rgb(206, 151, 255);
+  background-color: rgb(210, 162, 147);
   padding-top: 20px;
 }
 .box {
@@ -148,7 +148,7 @@
   z-index: -1;
 }
 .background{
-  background-color: #AD8BF7;
+  background-color: rgb(210, 162, 147);
   padding-top: 20px;
 }
 .sampleQuestions {
@@ -190,7 +190,7 @@
   height: 40px;
   padding-top: 10px;
   margin-top: 10px;
-  margin-left: 10%;
+  margin-left: 70%;
   border-color: rgb(97, 29, 243);
   border-radius: 10px;
   background-color: rgb(97, 29, 243);
@@ -251,12 +251,21 @@
   }
   .tabs{
     margin-top: -40px;
+    margin-left: 20px;
+  }
+  .boxes {
+    background-color: rgb(210, 162, 147);
+    padding-top: 20px;
+    width: 1200px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
 }
 @media (min-width: 300px){
  
   .box{
     border-radius: 20px;
+    /* bu ne bilmiom */
   }
   .tabs{
     margin-top: 0px;

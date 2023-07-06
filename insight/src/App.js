@@ -4,6 +4,7 @@ import React from "react";
 import Insight from "../src/components/Insight";
 import QA from "./components/Q&A";
 import Stepper from "./components/Stepper";
+import Stepper2 from "./components/Stepper2";
 import Person from "../src/components/Person";
 import Photo from "../src/components/images/indir.jpeg";
 // import purple from "../src/components/images/purple3.jpeg";
@@ -30,12 +31,12 @@ function App() {
         <Tabs
           defaultValue={0}
           className="tabs"
-          style={{ backgroundColor: "rgb(190, 124, 247)" }}
+          style={{ backgroundColor: "rgb(185, 145, 133)" }}
         >
           <TabList
             className="tablist"
             style={{
-              backgroundColor: "rgb(206, 151, 255)",
+              backgroundColor: "rgb(210, 162, 147)",
               width: "350px",
               borderTopRightRadius: "20px",
               borderTopLeftRadius: "0px",
@@ -70,6 +71,7 @@ function App() {
             <div>
               <Insight />
               {/* <Stepper/> */}
+              {/* <Stepper2/> */}
               {/* <Step key={x.id}>
                 <StepLabel
                   onClick={() => handleStep(x.id)}
