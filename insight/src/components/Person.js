@@ -1,10 +1,30 @@
 import data from "../api/person.json";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
+import { faAt } from "@fortawesome/free-solid-svg-icons";
 
 function Person({ image, name, date, other }) {
+  const [user, setUsers] = useState([]);
+
+
+  async function getRandomUser() {
+    try {
+      const data = await axios.get(
+        "https://random-data-api.com/api/v2/users?size=1&is_xml=true"
+      );
+      setUsers(data.data);
+      console.log(data.data);
+    } catch (err) {
+      console.log("error: ", err);
+    }
+  }
+  useEffect(() => {
+    getRandomUser();
+  }, []);
   const person = data.personInfo;
   return (
     <div className="navbarImg">
@@ -24,7 +44,7 @@ function Person({ image, name, date, other }) {
                       style={{ color: "#d25e2d" }}
                     />
                   }
-                  {value.name}
+                  {" "+user.first_name + " " + user.last_name}
                 </h2>
                 <p>
                   {
@@ -36,22 +56,21 @@ function Person({ image, name, date, other }) {
                     />
                   }
 
-                  {value.date}
+                  {" "+user.date_of_birth}
                 </p>
-                <p>{value.other}</p>
+                <p>
+                  {" "}
+                  <FontAwesomeIcon
+                    icon={faAt}
+                    style={{ color: "#d25e2f" }}
+                  />
+                  {" "+user.email}
+                </p>
               </div>
             </div>
           </div>
         );
       })}
-      {/* <div>
-          
-          <div className="info">
-            <h1 className="name"> {name}</h1>
-            <p className="other"> {date}</p>
-            <p className="other"> {other}</p>
-          </div>
-        </div> */}
     </div>
   );
 }

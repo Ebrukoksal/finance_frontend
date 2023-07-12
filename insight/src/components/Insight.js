@@ -59,7 +59,6 @@ export default Insight;
 //           </div>
 //           {/* {value.extra ? <More extra={value.extra} /> : <div></div>} */}
 
-//           {/* BURDA BİŞELER OLMADI AMA OLDU DA GİBİ YA */}
 //           {buts.map((but, index3) => {
 //             return (
 //               <button

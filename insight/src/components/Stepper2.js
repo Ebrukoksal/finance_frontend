@@ -15,10 +15,8 @@ import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Table from "./Table";
-import Menu from "./Menu";
-import data from "../api/insight.json";
-import { colors } from "@mui/material";
 import button from "../api/buttons.json";
+import { colors } from "@mui/material";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -35,8 +33,6 @@ const openLinkInNewTab = (url) => {
   if (newTab) newTab.opener = null;
 };
 
-const buts = button.buttons;
-
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
 
@@ -44,15 +40,15 @@ export default function RecipeReviewCard() {
     setExpanded(!expanded);
   };
 
-  const box = data.genel;
+  const buts = button.buttons;
 
   return (
     <Card sx={{ maxWidth: 800 }}>
       <CardHeader
         action={
-          // <IconButton aria-label="settings">
-          //   {/* <MoreVertIcon /> */}
-          // </IconButton>
+          <IconButton aria-label="settings">
+            <MoreVertIcon color="secondary" />
+          </IconButton>
           // <ExpandMore
           //   expand={expanded}
           //   onClick={handleExpandClick}
@@ -61,24 +57,17 @@ export default function RecipeReviewCard() {
           // >
           //   ...
           // </ExpandMore>
-          <Menu />
         }
-        title="INSIGHT: Open home loan application"
+        title={
+          <Typography color="darkviolet" fontSize={21}>
+            INSIGHT: Open Home Loan Application
+          </Typography>
+        }
         subheader="September 14, 2023"
       />
       {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
-          {buts.map((but, index3) => {
-            return (
-              <button
-                className="cancelCard"
-                onClick={() => openLinkInNewTab(but.link)}
-                key={index3}
-              >
-                {but.title}
-              </button>
-            );
-          })}{" "}
+          {" "}
         </CardContent>
       </Collapse> */}
       {/* <CardMedia
@@ -101,18 +90,21 @@ export default function RecipeReviewCard() {
       </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
-          <FavoriteIcon color="secondary" />
+          {/* <FavoriteIcon color="secondary" /> */}
+          <Typography variant="body1">
+            Create new insight 
+          </Typography>
         </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon color="secondary"/>
-        </IconButton>
+        {/* <IconButton aria-label="share">
+          <ShareIcon color="secondary" />
+        </IconButton> */}
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
-          <ExpandMoreIcon color="secondary"/>
+          <ExpandMoreIcon color="secondary" />
         </ExpandMore>
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -122,6 +114,17 @@ export default function RecipeReviewCard() {
           </Typography>
           <br />
           <Table />
+          {buts.map((but, index3) => {
+            return (
+              <button
+                className="cancelCard"
+                onClick={() => openLinkInNewTab(but.link)}
+                key={index3}
+              >
+                {but.title}
+              </button>
+            );
+          })}
         </CardContent>
       </Collapse>
     </Card>
