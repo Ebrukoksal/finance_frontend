@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { faCalendarDays } from "@fortawesome/free-regular-svg-icons";
 import { faAt } from "@fortawesome/free-solid-svg-icons";
+import Mova from "../components/images/mova-logo-v.png"
 
 function Person({ image, name, date, other }) {
   const [user, setUsers] = useState([]);
@@ -32,10 +33,10 @@ function Person({ image, name, date, other }) {
         return (
           <div key={index}>
             <div className="personBox">
-              <div className="image">
-                {/* <img className="personImage" src={image} alt="" /> */}
+              <div className="image" >
+                <img className="personImage" src={Mova} alt="" />
               </div>
-              <div className="image">
+              <div >
                 <h2>
                   {" "}
                   {
@@ -56,7 +57,10 @@ function Person({ image, name, date, other }) {
                     />
                   }
 
-                  {" "+user.date_of_birth}
+                  {" "+user.phone_number}
+                </p>
+                <p>
+                {" "+user.uid}
                 </p>
                 <p>
                   {" "}

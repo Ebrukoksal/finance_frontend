@@ -5,6 +5,7 @@ import Button from "../api/buttons.json";
 import WhyBox from "./whyBox";
 import Table from "./Table";
 import Stepper2 from "../components/Stepper2";
+import CreateNew from "./CreateNew";
 
 const More = (props) => {
   return (
@@ -35,9 +36,13 @@ function Insight() {
   const buts = Button.buttons;
 
   return (
-    <div>
-      <div className="boxes">
+    <div className="boxes">
+      <div >
       <Stepper2/>
+      </div>
+      <br/><br/>
+      <div >
+        <CreateNew/>
       </div>
     </div>
   );

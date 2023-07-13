@@ -43,7 +43,7 @@ export default function RecipeReviewCard() {
   const buts = button.buttons;
 
   return (
-    <Card sx={{ maxWidth: 800 }}>
+    <Card sx={{marginLeft: "10px", marginRight: "10px" }}>
       <CardHeader
         action={
           <IconButton aria-label="settings">
@@ -89,12 +89,6 @@ export default function RecipeReviewCard() {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
-          {/* <FavoriteIcon color="secondary" /> */}
-          <Typography variant="body1">
-            Create new insight 
-          </Typography>
-        </IconButton>
         {/* <IconButton aria-label="share">
           <ShareIcon color="secondary" />
         </IconButton> */}
